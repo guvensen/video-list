@@ -1,0 +1,21 @@
+.form-group{
+  margin-top: 20px;
+
+  label{
+    /*display: block;*/
+    margin-bottom: 5px;
+  }
+
+}
+
+.radio-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.save-btn{
+  display: block;
+  margin: 0 auto;
+  padding: 0 40px;
+}

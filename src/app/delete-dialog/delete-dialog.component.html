@@ -1,0 +1,11 @@
+<h2 mat-dialog-title class="dialog-title">
+  <mat-icon class="material-icons-round md-36 done-icon">done</mat-icon>
+</h2>
+<mat-dialog-content class="mat-typography">
+  <p>{{data.name}}</p>
+  <p>Silmek istediğine <br> emin misin?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-button (click)="onNoClick()" color="primary">İptal</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial color="primary">Evet</button>
+</mat-dialog-actions>

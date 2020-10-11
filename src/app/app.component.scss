@@ -1,0 +1,43 @@
+.app-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mat-checkbox-layout{
+  width: 100% !important;
+}
+
+.change-color{
+  background: #fff;
+  width: 150px;
+  height: auto;
+  position: fixed;
+  right: 0;
+  top: 250px;
+  border: 1px solid #d1d1d1;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  padding: 10px;
+
+  .title{
+    display: flex;
+  }
+
+  .them-check{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .alternate-theme{
+    background: #c39a6b;
+  }
+  .alternate-theme-2{
+    background: #c4c4c4;
+  }
+  .alternate-theme-3{
+    background: #8ab1c4;
+  }
+}

@@ -1,0 +1,64 @@
+<mat-toolbar>
+  <div class="toolbar-container">
+    <button mat-raised-button [matMenuTriggerFor]="menu" class="video-types-btn" color="primary">Türler <mat-icon class="material-icons-round md-36">keyboard_arrow_down</mat-icon></button>
+    <mat-menu #menu="matMenu" class="video-types">
+      <button mat-menu-item>
+        <mat-checkbox class="checkbox" color="primary" labelPosition='before' (change)="showAll($event)" [checked]="showList.indexOf('movie') !== -1 && showList.indexOf('series') !== -1"> <div class="spacer">Tümü</div></mat-checkbox>
+      </button>
+      <button mat-menu-item>
+        <mat-checkbox labelPosition="before" color="primary" (change)="showMovie($event)" [checked]="showList.indexOf('movie') !== -1">Film</mat-checkbox>
+      </button>
+      <button mat-menu-item>
+        <mat-checkbox labelPosition="before" color="primary" (change)="showSeries($event)" [checked]="showList.indexOf('series') !== -1">Dizi</mat-checkbox>
+      </button>
+    </mat-menu>
+
+    <button mat-raised-button [matMenuTriggerFor]="menuSort" color="primary">Sırala <mat-icon class="material-icons-round md-36">keyboard_arrow_down</mat-icon></button>
+    <mat-menu #menuSort="matMenu" class="sort-menu">
+      <button mat-menu-item class="active">
+        <p (click)="sortByScoreDescending()"  >Puana Göre (Azalan)</p>
+      </button>
+      <button mat-menu-item>
+        <p (click)="sortByScoreAscending()">Puana Göre (Artan)</p>
+      </button>
+    </mat-menu>
+
+    <span class="spacer"></span>
+    <span>Case Study</span>
+    <span class="spacer"></span>
+
+    <button mat-raised-button color="primary" routerLink="/create">
+      <mat-icon class="material-icons-round md-36">add</mat-icon>  Yeni Kayıt
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="app-container">
+
+  <div *ngFor="let video of sortBy('score')">
+    <div [hidden]="showList.indexOf(video.type) === -1">
+      <mat-card class="video-list-card mat-elevation-z">
+        <div class="item name">
+          {{ video.name }}
+          <mat-icon aria-hidden="false" aria-label=" delete_outline icon" class="remove" (click)="removeVideo(video.id)" data-videoid="{{ video.id }}">delete_outline</mat-icon>
+        </div>
+        <div class="item score">
+          <mat-icon aria-hidden="false" aria-label="star icon" class="start">star</mat-icon> {{ video.score }}
+        </div>
+        <div class="item action">
+          <p class="title">Puan Ver</p>
+            <mat-icon class="rating-btn increase material-icons-round md-36" (click)="scoreIncrease(video.id)">arrow_left</mat-icon>
+            <mat-icon class="rating-btn decrease material-icons-round md-36" (click)="scoreDecrease(video.id)">arrow_left</mat-icon>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <ul class="pagination" >
+    <li (click)="onPrevPage()"><mat-icon >arrow_left</mat-icon></li>
+    <li *ngFor="let page of counter(totalPage); let i = index" [ngClass]="currentPage === i ? 'active' : ''" (click)="onChangePage(i)">
+      {{i+1}}
+    </li>
+    <li (click)="onNextPage()"><mat-icon>arrow_right</mat-icon></li>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<div class="{{theme}}">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="change-color">
+
+  <div>
+    <p class="title">Tema Rengi Seçiniz : </p>
+  </div>
+  <div align="center">
+    <span class="them-check alternate-theme" (click)="changeTheme('alternate-theme')"></span>
+    <span class="them-check alternate-theme-2" (click)="changeTheme('alternate-theme-2')"></span>
+    <span class="them-check alternate-theme-3" (click)="changeTheme('alternate-theme-3')"></span>
+  </div>
+</div>

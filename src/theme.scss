@@ -1,0 +1,124 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$my-app-primary: mat-palette($mat-blue-grey);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
+
+$mat-custom-01:(
+  50: #f8f3ed,
+  100: #ede1d3,
+  200: #e1cdb5,
+  300: #d5b897,
+  400: #cca981,
+  500: #c39a6b,
+  600: #bd9263,
+  700: #b58858,
+  800: #ae7e4e,
+  900: #a16c3c,
+ A100: #fff7f1,
+ A200: #ffdcbe,
+ A400: #ffc18b,
+ A700: #ffb371,
+     contrast: (
+      50: #ffffff,
+      100: #ffffff,
+      200: #ffffff,
+      300: #ffffff,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: $light-primary-text,
+      900: $light-primary-text,
+      A100: #ffffff,
+      A200: #ffffff,
+      A400: #ffffff,
+      A700: black,
+    ),
+);
+$mat-custom-02:(
+  50: #f8f8f8,
+  10: #ededed,
+  20: #e2e2e2,
+  30: #d6d6d6,
+  40: #cdcdcd,
+  500: #c4c4c4,
+  600: #bebebe,
+  700: #b6b6b6,
+  800: #afafaf,
+  900: #a2a2a2,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffe5e5,
+  A700: #ffcccc,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: black,
+  ),
+);
+$mat-custom-03:(
+  50: #f1f6f8,
+  100: #dce8ed,
+  200: #c5d8e2,
+  300: #adc8d6,
+  400: #9cbdcd,
+  500: #8ab1c4,
+  600: #82aabe,
+  700: #77a1b6,
+  800: #6d98af,
+  900: #5a88a2,
+  A100: #ffffff,
+  A200: #d8f1ff,
+  A400: #a5deff,
+  A700: #8bd4ff,
+  contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: black,
+  ),
+);
+
+
+.alternate-theme {
+  $alternate-primary: mat-palette($mat-custom-01);
+  $alternate-accent:  mat-palette($mat-yellow, 400);
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+  @include angular-material-theme($alternate-theme);
+}
+.alternate-theme-2 {
+  $alternate-primary: mat-palette($mat-custom-02);
+  $alternate-accent:  mat-palette($mat-yellow, 400);
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+  @include angular-material-theme($alternate-theme);
+}
+.alternate-theme-3 {
+  $alternate-primary: mat-palette($mat-custom-03);
+  $alternate-accent:  mat-palette($mat-yellow, 400);
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+  @include angular-material-theme($alternate-theme);
+}
